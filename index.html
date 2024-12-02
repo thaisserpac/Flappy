@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Virtual Pantry</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="MyVirtualPantry.js" defer></script>
+</head>
+
+<body>
+    <!-- Topbar with logo -->
+    <header id="topbar">
+        <div class="logo">
+            <img src="logo.webp" alt="My Virtual Pantry Logo" id="site-logo" />
+        </div>
+        <div class="site-title">My Virtual Pantry</div>
+    </header>
+
+    <div id="side-menu">
+        <h1>Welcome to your virtual pantry</h1>
+
+        <div id="break"></div>
+
+        <div class="container">
+            <!-- Add to Pantry -->
+            <button class="add-button" onclick="toggleAddForm()">Add to Pantry</button>
+
+            <!-- Form to add items -->
+            <div class="form-container" id="add-form-container">
+                <label for="name">Item name:</label>
+                <input type="text" id="name" placeholder="Enter item name">
+                <label for="bestByDate">Best By Date:</label>
+                <input type="date" id="bestByDate" />
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" placeholder="Enter in servings/ units">
+                <button onclick="addItem()">Add Item</button>
+            </div>
+        </div>
+
+        <!-- Remove from Pantry -->
+        <button class="remove-button" onclick="toggleRemoveForm()">Remove from Pantry</button>
+
+        <!-- Form to Remove Item from Pantry -->
+        <div class="form-container" id="remove-form-container" style="display: none;">
+            <label for="remove-item-select">Select Item to Remove:</label>
+            <select id="remove-item-select"></select>
+            <br>
+            <label for="remove-quantity">Quantity to Remove:</label>
+            <input type="number" id="remove-quantity" placeholder="Enter quantity">
+            <button onclick="removeItem()">Remove Item</button>
+        </div>
+
+        <!--Lear pantry button-->
+        <button class="clear-button" onclick="clearPantry()">Clear Pantry</button>
+    </div>
+
+    <!-- Main screen where pantry items will be displayed -->
+    <div id="main-screen">
+        <!-- Sort Options -->
+        <div class="sort-container">
+            <label for="sort-options">Sort by:</label>
+            <select id="sort-options" onchange="sortPantryItems()">
+                <option value="alpha-asc">Alphabetically: A to Z</option>
+                <option value="alpha-desc">Alphabetically: Z to A</option>
+                <option value="date-asc">Best By Date: Increasing</option>
+                <option value="date-desc">Best By Date: Decreasing</option>
+            </select>
+        </div>
+
+        <!-- Pantry items menu-->
+        <h2>Your Pantry</h2>
+        <br>
+        <div id="pantry-items-container"></div> <!-- Pantry items will be appended here -->
+    </div>
+</body>
+
+</html>

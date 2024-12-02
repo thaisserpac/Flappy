@@ -1,0 +1,157 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f2; /* Soft cream for main content */
+    color: #333;
+    height: 100%;
+}
+
+#break {
+    margin-top: 3em;
+}
+
+/* Topbar styling */
+#topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px; /* Increased height for the topbar */
+    background-color: #D1B39D; /* Warm beige */
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Ensure the topbar stays above other elements */
+}
+
+#site-logo {
+    width: 60px; /* Increased logo size */
+    height: auto;
+}
+
+.site-title {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Sidebar Styling */
+#side-menu {
+    position: fixed;
+    top: 70px; /* Start below the topbar */
+    left: 0;
+    width: 350px;
+    height: 100%;
+    background-color: #E1D4C9; /* Light beige */
+    color: #333;
+    padding: 20px;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+/* Add & Remove Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.add-button {
+    background-color: #D1B39D; 
+    color: white;
+}
+
+.remove-button {
+    background-color: #D1B39D; 
+    color: white;
+}
+
+.clear-button {
+    background-color: #D1B39D; 
+    color: white;
+}
+
+/* Form styling */
+.form-container {
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #FFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.form-container input, .form-container select {
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Show form when toggled */
+#add-form-container.active, #remove-form-container.active {
+    display: flex;
+}
+
+#main-screen {
+    margin-left: 350px; /* Sidebar width */
+    margin-top: 70px;  /* Height of the topbar */
+    padding: 1px 16px;
+    height: calc(100vh - 70px);
+}
+
+/* Sort Options Container */
+.sort-container {
+    margin: 20px;
+    display: flex;
+    align-items: right;
+}
+
+.sort-container select {
+    padding: 8px;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+/* Pantry items container */
+#pantry-items-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto the next row */
+    gap: 20px; /* Space between items */
+}
+
+/* Styling for each pantry item */
+.pantry-item {
+    width: 200px; /* Fixed width for each item */
+    background-color: #E1D4C9; /* Soft pink background */
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Pantry item text styling */
+.pantry-item h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.pantry-item p {
+    font-size: 14px;
+    margin-top: 5px;
+}
